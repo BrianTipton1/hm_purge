@@ -2,7 +2,7 @@
 let
   my-python = pkgs.python39;
   python-with-my-packages =
-    my-python.withPackages (p: with p; [ validators requests ]);
+    my-python.withPackages (p: with p; [  ]);
   wrapper = pkgs.writeScriptBin "${name}" ''
     export PYTHONPATH=${python-with-my-packages}/${python-with-my-packages.sitePackages}
     ${my-python}/bin/python ${./main.py} $@'';
